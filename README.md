@@ -15,16 +15,56 @@ Automatically captures commands from `az`, `aws`, and `gcloud` out of the box, a
 
 ## Install
 
+### Download binary (recommended)
+
+Download the latest binary for your platform from [GitHub Releases](https://github.com/AshutoshBharti/snipctl/releases/latest).
+
+**Linux (amd64):**
+```bash
+curl -L https://github.com/AshutoshBharti/snipctl/releases/latest/download/snipctl-linux-amd64 -o snipctl
+chmod +x snipctl
+sudo mv snipctl /usr/local/bin/
+```
+
+**Linux (arm64):**
+```bash
+curl -L https://github.com/AshutoshBharti/snipctl/releases/latest/download/snipctl-linux-arm64 -o snipctl
+chmod +x snipctl
+sudo mv snipctl /usr/local/bin/
+```
+
+**macOS (Apple Silicon):**
+```bash
+curl -L https://github.com/AshutoshBharti/snipctl/releases/latest/download/snipctl-macos-arm64 -o snipctl
+chmod +x snipctl
+sudo mv snipctl /usr/local/bin/
+```
+
+**macOS (Intel):**
+```bash
+curl -L https://github.com/AshutoshBharti/snipctl/releases/latest/download/snipctl-macos-amd64 -o snipctl
+chmod +x snipctl
+sudo mv snipctl /usr/local/bin/
+```
+
+**Windows (PowerShell):**
+```powershell
+Invoke-WebRequest -Uri https://github.com/AshutoshBharti/snipctl/releases/latest/download/snipctl-windows-amd64.exe -OutFile snipctl.exe
+Move-Item snipctl.exe "$env:USERPROFILE\bin\snipctl.exe"
+# Ensure $env:USERPROFILE\bin is in your PATH
+```
+
+### Verify installation
+
+```bash
+snipctl --version
+```
+
 ### From source
 
 ```bash
+# Requires Rust toolchain
 cargo install --path .
-```
-
-### From crates.io (coming soon)
-
-```bash
-cargo install snipctl
 ```
 
 ## Quick Start
